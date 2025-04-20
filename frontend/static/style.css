@@ -1,0 +1,86 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #c6d0ff, #f7f9ff);
+  padding: 40px;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.02);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #005eff;
+  font-size: 28px;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  resize: vertical;
+  transition: border 0.3s;
+  margin-bottom: 20px;
+}
+
+textarea:focus {
+  border: 1px solid #005eff;
+  outline: none;
+}
+
+button {
+  padding: 12px 24px;
+  background: linear-gradient(to right, #005eff, #00b4ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #003ecb, #008ecc);
+}
+
+.result {
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Color-specific sentiment results */
+.result.positive {
+  color: green;
+}
+
+.result.negative {
+  color: red;
+}
+
+.result.neutral {
+  color: blue;
+}

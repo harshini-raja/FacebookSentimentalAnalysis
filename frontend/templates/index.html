@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Facebook Post Sentiment Analyzer</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Facebook Post Sentiment Analyzer</h1>
+      <form method="POST">
+        <textarea
+          name="text"
+          rows="6"
+          placeholder="Enter your Facebook post here..."
+          required
+        ></textarea>
+        <button type="submit">Analyze Sentiment</button>
+      </form>
+
+      {% if sentiment %} {% set sentiment_lower = sentiment.lower() %} {% if
+      "positive" in sentiment_lower %}
+      <p class="result positive">{{ sentiment }}</p>
+      {% elif "negative" in sentiment_lower %}
+      <p class="result negative">{{ sentiment }}</p>
+      {% elif "neutral" in sentiment_lower %}
+      <p class="result neutral">{{ sentiment }}</p>
+      {% else %}
+      <p class="result">{{ sentiment }}</p>
+      {% endif %} {% endif %}
+    </div>
+  </body>
+</html>
